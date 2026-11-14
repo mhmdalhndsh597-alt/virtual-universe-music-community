@@ -1,0 +1,60 @@
+name: Order or distribution request
+description: Request a licensed release, purchase, distribution, or commercial collaboration.
+title: "[Order request]: "
+labels:
+  - order-request
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not include passwords, API keys, payment-card data, private legal documents, unreleased masters, or other sensitive material.
+        This form creates a public issue for manual review. It is not a payment form and does not confirm a purchase or license.
+  - type: input
+    id: requester
+    attributes:
+      label: Name or public handle
+      description: Use a public contact identity only. Do not include private personal data.
+    validations:
+      required: true
+  - type: dropdown
+    id: request_type
+    attributes:
+      label: Request type
+      options:
+        - Purchase or license a published preview
+        - Distribution request
+        - Commercial collaboration
+        - Sponsorship or support
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: release_reference
+    attributes:
+      label: Release or project reference
+      description: Provide the public FOX release title or public project URL, if available.
+    validations:
+      required: true
+  - type: textarea
+    id: request_details
+    attributes:
+      label: Request details
+      description: Describe the intended use, territory, timeframe, and deliverables. Do not include payment data or private files.
+    validations:
+      required: true
+  - type: textarea
+    id: rights_context
+    attributes:
+      label: Rights and licensing context
+      description: State your role and any public license or permission information.
+    validations:
+      required: true
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Confirmation
+      options:
+        - label: I understand this is a public request for manual review, not a payment or purchase confirmation.
+          required: true
+        - label: I did not include secrets, payment-card data, private legal documents, or unreleased master files.
+          required: true
